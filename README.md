@@ -1,2 +1,2 @@
 # Reactivities
-Complete guide to building an app with .Net Core and React course
+Application developed during the [Complete guide to building an app with .Net Core and React] course. ** WIP **
