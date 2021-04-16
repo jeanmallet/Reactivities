@@ -1,5 +1,6 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Persistence;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace API.Controllers
 {
@@ -7,6 +8,13 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public abstract class BaseApiController : ControllerBase
     {
-       
+        private IMediator _mediator;
+        protected IMediator Mediator
+        {
+            get
+            {
+                return _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+            }
+        }
     }
 }
