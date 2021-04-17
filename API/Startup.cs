@@ -44,7 +44,7 @@ namespace API
 
             app.UseRouting();
 
-            app.UseCors("CrosPolicy_AllowLocalhost3000");
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 

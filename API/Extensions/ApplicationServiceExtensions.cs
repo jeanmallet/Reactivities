@@ -26,7 +26,7 @@ namespace API.Extensions
 
             services.AddCors(opt => 
             {
-                opt.AddPolicy("CrosPolicy_AllowLocalhost3000", policy => 
+                opt.AddPolicy("CorsPolicy", policy => 
                 {
                     policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
                 });
@@ -34,10 +34,13 @@ namespace API.Extensions
 
             services.AddMediatR
             (
-                typeof(List.Handler).Assembly
+                typeof(List.Handler).Assembly // Application.Activities
             );
 
-            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+            services.AddAutoMapper
+            (
+                typeof(MappingProfiles).Assembly // Application.Core
+            );
 
             return services;
         }
